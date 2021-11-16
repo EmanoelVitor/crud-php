@@ -1,11 +1,10 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Crud Php ADICIONAR MEMBRO</title>
-
 </head>
 <body>
-
 
 	<a href="home.php"><h2>americanas</h2></a>
 

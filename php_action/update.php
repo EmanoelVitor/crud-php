@@ -5,10 +5,10 @@ require_once 'db_connect.php';
 if($_POST) {
 	$nome = $_POST['nome'];
 	$genero = $_POST['genero'];
-    $dtanasc = $_POST['dtanasc'];
-    $cpf = $_POST['cpf'];
-    $fone = $_POST['fone'];
-    $email = $_POST['email'];
+	$dtanasc = $_POST['dtanasc'];
+	$cpf = $_POST['cpf'];
+	$fone = $_POST['fone'];
+	$email = $_POST['email'];
 	
 	$id_pessoafisica = $_POST['id_pessoafisica'];
 
