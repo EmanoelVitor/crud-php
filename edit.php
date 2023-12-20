@@ -26,10 +26,9 @@ if ($_GET['id_pessoafisica']) {
 
     <body>
 
-        <center>
-            <h1>Editar</h1>
+            <h1 class="text-center">Editar</h1>
 
-            <form action="php_action/update.php" method="post">
+            <form action="php_action/update.php" method="post" class="form-group mx-auto d-flex justify-content-center">
                 <table cellspacing="0" cellpadding="0">
                     <tr>
                         <th>Nome</th>
@@ -62,9 +61,6 @@ if ($_GET['id_pessoafisica']) {
                     </tr>
                 </table>
             </form>
-        </center>
-
-
     </body>
 
     </html>

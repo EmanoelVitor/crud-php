@@ -8,47 +8,56 @@ include("bootstrap.html");
 <head>
 	<meta charset="utf-8">
 	<object type="text/html" data="bootstrap.html"></object>
+
 </head>
 
 <body>
-	<h1>criar seu cadastro</h1>
-	<form action="php_action/create.php" method="post" class="form">
-		<table>
-			<tr>
-				<th>Nome completo</th>
-				<td><input type="text" name="nome" /></td>
-			</tr>
-			<tr>
-				<th>Gênero</th>
-				<td><input type="text" name="genero" /> </td>
-			</tr>
 
-			<tr>
-				<th>Data de nascimento</th>
-				<td><input type="date" name="dtanasc" /> </td>
-			</tr>
+	<div class="container p-5">
 
-			<tr>
-				<th>CPF</th>
-				<td><input type="text" name="cpf" /> </td>
-			</tr>
+		<h1 class="text-center">CADASTRO</h1>
+		<form action="php_action/create.php" method="post">
 
-			<tr>
-				<th>Telefone</th>
-				<td><input type="text" name="fone" /> </td>
-			</tr>
+			<div class="mb-3">
+				<label for="nome" class="form-label">Nome</label>
+				<input type="text" class="form-control" name="nome" id="nome" />
+			</div>
 
-			<tr>
-				<th>E-mail</th>
-				<td><input type="email" name="email" /> </td>
-			</tr>
+			<div class="mb-3">
+				<label for="genero" class="form-label">Gênero</label>
+				<input type="text" class="form-control" name="genero" id="genero" />
+			</div>
 
-			<tr>
-				<td><button type="submit" class="btn btn-primary">Salvar dados</button></td>
-				<td><a href="index.php"><button type="button" class="btn btn-secondary">Voltar</button></a></td>
-			</tr>
-		</table>
-	</form>
+			<div class="row mb-3">
+				<div class="col-8">
+				<label for="cpf" class="form-label">CPF</label>
+				<input type="text" class="form-control" name="cpf" id="cpf" />
+				</div>
+				
+				<div class="col-4">
+				<label for="dn" class="form-label">Data de nascimento</label>
+				<input type="date" class="form-control" name="dtanasc" id="dn" />
+				</div>
+			</div>
+
+
+			<div class="mb-3">
+				<label for="tel" class="form-label">Telefone</label>
+				<input type="text" class="form-control" name="fone" id="tel" />
+			</div>
+
+			<div class="mb-3">
+				<label for="email" class="form-label">E-mail</label>
+				<input type="text" class="form-control" name="email" id="email" />
+			</div>
+
+			<button type="submit" class="btn btn-primary">Salvar dados</button>
+			<a href="index.php"><button type="button" class="btn btn-secondary">Voltar</button></a>
+
+		</form>
+
+	</div>
+
 </body>
 
 </html>

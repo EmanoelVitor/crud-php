@@ -14,29 +14,31 @@ include("bootstrap.html");
 </head>
 
 <body>
+  <div class="container">
+  <h1 class="text-center">DADOS CADASTRADOS</h1>
+    <table class="table table-light table-sm">
+      <div class="table-responsive">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Gênero</th>
+            <th>Data de nascimento</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th colspan="2">Ações</th>
 
-  <table class="table table-dark table-striped">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Nome</th>
-        <th>Gênero</th>
-        <th>Data de nascimento</th>
-        <th>CPF</th>
-        <th>Telefone</th>
-        <th>E-mail</th>
-        <th colspan="2">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          $sql = "SELECT * FROM pessoa";
+          $result = $connect->query($sql);
 
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-      $sql = "SELECT * FROM pessoa";
-      $result = $connect->query($sql);
-
-      if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-          echo "<tr>
+          if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              echo "<tr>
           <td>" . $row['id_pessoafisica'] . "</td>
           <td>" . $row['nome'] . "</td>
           <td>" . $row['genero'] . "</td>
@@ -52,21 +54,15 @@ include("bootstrap.html");
           <a href='php_action/remove.php?id_pessoafisica= " . $row['id_pessoafisica'] . "'> <button type='button' class='btn btn-danger'>Remover</button></a>
           </td>
           </tr>";
-        }
-      } else {
-        echo "<tr><td colspan='5'><center>Nao existem dados</center></td></tr>";
-      }
-      ?>
-    </tbody>
-  </table>
-
+            }
+          } else {
+            echo "<tr><td colspan='5'><center>Nao existem dados</center></td></tr>";
+          }
+          ?>
+        </tbody>
+    </table>
+    <a href="create.php"><button type="button" class="btn btn-primary">Adicionar</button></a>
   </div>
-
-  <a href="create.php"><button type="button" class="btn btn-primary">Adicionar</button></a>
-  </div>
-  </div>
-
-
   </div>
 </body>
 
