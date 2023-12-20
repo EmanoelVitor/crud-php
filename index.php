@@ -1,20 +1,21 @@
-<?php require_once 'php_action/db_connect.php'; ?>
+<?php
+require_once 'php_action/db_connect.php';
+include("bootstrap.html");
+?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>PHP CRUD</title>
   <meta charset='utf-8'>
-  
+  <object type="text/html" data="bootstrap.html"></object>
+
 </head>
+
 <body>
 
-  <a href="http://trabalho-php.epizy.com/home.php"><h2>americanas</h2></a>
-
-
-
-
-  <table>
+  <table class="table table-dark table-striped">
     <thead>
       <tr>
         <th>Id</th>
@@ -24,30 +25,31 @@
         <th>CPF</th>
         <th>Telefone</th>
         <th>E-mail</th>
-        
+        <th colspan="2">Ações</th>
+
       </tr>
     </thead>
     <tbody>
       <?php
-      $sql = "SELECT * FROM clientes_cadastro";
+      $sql = "SELECT * FROM pessoa";
       $result = $connect->query($sql);
 
-      if($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
           echo "<tr>
-          <td>".$row['id_pessoafisica']."</td>
-          <td>".$row['nome']."</td>
-          <td>".$row['genero']."</td>
-          <td>".$row['dtanasc']."</td>
-          <td>".$row['cpf']."</td>
-          <td>".$row['fone']."</td>
-          <td>".$row['email']."</td>
+          <td>" . $row['id_pessoafisica'] . "</td>
+          <td>" . $row['nome'] . "</td>
+          <td>" . $row['genero'] . "</td>
+          <td>" . $row['dtanasc'] . "</td>
+          <td>" . $row['cpf'] . "</td>
+          <td>" . $row['fone'] . "</td>
+          <td>" . $row['email'] . "</td>
           <td>
-          <a href='edit.php?id_pessoafisica=".$row['id_pessoafisica']."'>
-          <button type='button'>button></a>
+          <a href='edit.php?id_pessoafisica=" . $row['id_pessoafisica'] . "'>
+          <button type='button' class='btn btn-success'>Editar</button></a>
           </td>
           <td>
-          <a href='php_action/remove.php?id_pessoafisica= ".$row['id_pessoafisica']."'> <button type='button'></button></a>
+          <a href='php_action/remove.php?id_pessoafisica= " . $row['id_pessoafisica'] . "'> <button type='button' class='btn btn-danger'>Remover</button></a>
           </td>
           </tr>";
         }
@@ -57,15 +59,15 @@
       ?>
     </tbody>
   </table>
-  
-</div>
-<a href='home.php'><button type='button'>Home</button></a>
 
-<a href="create.php"><button type="button">Adicionar</button></a>
-</div>
-</div>
+  </div>
+
+  <a href="create.php"><button type="button" class="btn btn-primary">Adicionar</button></a>
+  </div>
+  </div>
 
 
-</div>
+  </div>
 </body>
+
 </html>

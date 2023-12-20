@@ -1,9 +1,9 @@
 <?php
 
-$servidor = "sql112.epizy.com";
-$user = "epiz_30307070";
-$password = "hC21p2ShXCH";
-$dbname = "epiz_30307070_americanas";
+$servidor = "localhost";
+$user = "root";
+$password = "";
+$dbname = "crud-php";
 
 $connect = new mysqli($servidor,$user, $password,$dbname);
 

@@ -12,11 +12,10 @@ if($_POST) {
 	
 	$id_pessoafisica = $_POST['id_pessoafisica'];
 
-	$sql  = "UPDATE clientes_cadastro SET nome = '$nome', genero = '$genero', dtanasc = '$dtanasc', cpf = '$cpf', fone = '$fone', email = '$email'  WHERE id_pessoafisica = {$id_pessoafisica}";
+	$sql  = "UPDATE pessoa SET nome = '$nome', genero = '$genero', dtanasc = '$dtanasc', cpf = '$cpf', fone = '$fone', email = '$email'  WHERE id_pessoafisica = {$id_pessoafisica}";
 	if($connect->query($sql) === TRUE) {
 		echo "<p>Successo</p>";
-		echo "<a href='../edit.php?id_pessoafisica=".$id_pessoafisica."'><button type='button'>Voltar</button></a>";
-		echo "<a href='../index.php'><button type='button'>Home</button></a>";
+		header("Refresh: 1; url=../index.php");
 	} else {
 		echo "Erro : ". $connect->error;
 	}
