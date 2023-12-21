@@ -1,5 +1,6 @@
 <?php
 include("bootstrap.html");
+include("footer.html");
 ?>
 
 <!DOCTYPE html>
@@ -7,8 +8,7 @@ include("bootstrap.html");
 
 <head>
 	<meta charset="utf-8">
-	<object type="text/html" data="bootstrap.html"></object>
-
+	<title>Cadastrar</title>
 </head>
 
 <body>

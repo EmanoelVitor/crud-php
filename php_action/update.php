@@ -15,7 +15,7 @@ if($_POST) {
 	$sql  = "UPDATE pessoa SET nome = '$nome', genero = '$genero', dtanasc = '$dtanasc', cpf = '$cpf', fone = '$fone', email = '$email'  WHERE id_pessoafisica = {$id_pessoafisica}";
 	if($connect->query($sql) === TRUE) {
 		echo "<p>Successo</p>";
-		header("Refresh: 1; url=../index.php");
+		header("Refresh: 0.1; url=../index.php");
 	} else {
 		echo "Erro : ". $connect->error;
 	}

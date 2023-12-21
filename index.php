@@ -1,6 +1,7 @@
 <?php
 require_once 'php_action/db_connect.php';
 include("bootstrap.html");
+include("footer.html");
 ?>
 
 <!DOCTYPE html>
@@ -9,8 +10,6 @@ include("bootstrap.html");
 <head>
   <title>PHP CRUD</title>
   <meta charset='utf-8'>
-  <object type="text/html" data="bootstrap.html"></object>
-
 </head>
 
 <body>
@@ -48,10 +47,10 @@ include("bootstrap.html");
           <td>" . $row['email'] . "</td>
           <td>
           <a href='edit.php?id_pessoafisica=" . $row['id_pessoafisica'] . "'>
-          <button type='button' class='btn btn-success'>Editar</button></a>
+          <button type='button' class='btn btn-success'><i class='bi bi-pencil-square'></i></button></a>
           </td>
           <td>
-          <a href='php_action/remove.php?id_pessoafisica= " . $row['id_pessoafisica'] . "'> <button type='button' class='btn btn-danger'>Remover</button></a>
+          <a href='php_action/remove.php?id_pessoafisica= " . $row['id_pessoafisica'] . "'> <button type='button' class='btn btn-danger'><i class='bi bi-trash3'></i></button></a>
           </td>
           </tr>";
             }

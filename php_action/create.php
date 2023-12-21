@@ -30,7 +30,7 @@ if ($_POST) {
 </head>
 
 <body>
- <?php header("Refresh: 0.5; url=../index.php");?>
+ <?php header("Refresh: 0.1; url=../index.php");?>
 </body>
 
 </html>

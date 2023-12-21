@@ -15,6 +15,6 @@ if ($_GET) {
 
     $connect->close();
 }
-header("Refresh: 1; url=../index.php");
+header("Refresh: 0.1; url=../index.php");
 
 ?>
